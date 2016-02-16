@@ -195,20 +195,23 @@
 
     public void curvAdx() {
 
-
+      // la RoboTarta curva solo nel caso stia gia' andando avanti o indietro
+      SoftPwm.softPwmWrite(MOTOR_PWM_SX, 100);
+      SoftPwm.softPwmWrite(MOTOR_PWM_DX, 50);
 
     }
 
     public void curvAsx() {
 
-
+      // la RoboTarta curva solo nel caso stia gia' andando avanti o indietro
+      SoftPwm.softPwmWrite(MOTOR_PWM_SX, 50);
+      SoftPwm.softPwmWrite(MOTOR_PWM_DX, 100);
 
     }
 
 
     public void stop() {
 
-      // stop ai motori creare un metodo apposta
       SoftPwm.softPwmWrite(MOTOR_PWM_SX, 0);
       SoftPwm.softPwmWrite(MOTOR_PWM_DX, 0);
 
