@@ -44,10 +44,10 @@ public void seleziona(int up1, int up2) {
   System.out.println("Seleziona!");
   // definisco le correlazioni tra i PIN del GPIO e il
   // significato logico per lo shift register
-  int MOTORLATCH = 0;
-  int MOTORCLK = 1;
-  int MOTORENABLE = 2;
-  int MOTORDATA =  3;
+  private final int MOTORLATCH = 0;
+  private final int MOTORCLK = 1;
+  private final int MOTORENABLE = 2;
+  private final int MOTORDATA =  3;
 
   Gpio.digitalWrite(MOTORLATCH, 0);
   Gpio.digitalWrite(MOTORDATA, 0);

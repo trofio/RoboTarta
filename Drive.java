@@ -36,15 +36,15 @@
 
   // definisco le correlazioni tra i PIN del GPIO e il
 	// significato logico per lo shift register
-	int MOTORLATCH = 0;
-	int MOTORCLK = 1;
-	int MOTORENABLE = 2;
-	int MOTORDATA =  3;
+	private final int MOTORLATCH = 0;
+	private final int MOTORCLK = 1;
+	private final int MOTORENABLE = 2;
+	private final int MOTORDATA =  3;
 
   // motori di sinistra
-	int MOTOR_PWM_SX = 4;
+	private final int MOTOR_PWM_SX = 4;
   // motori di destra
-	int MOTOR_PWM_DX = 5;
+	private final int MOTOR_PWM_DX = 5;
   // creo un oggetto Latch da usare per impartire i comandi di movimento
   Latch vai = new Latch();
 
@@ -158,8 +158,12 @@
       SoftPwm.softPwmWrite(MOTOR_PWM_DX, 100);
 
       // calcolo il tempo che ci vuole a ruotare di 'x' gradi
+      // 1200ms ~ 180 gradi --> 1200/180=6.66667
+      float fattoreConversione = 1200 / 80;
+      float wait = gradi * fattoreConversione;
+
       try {
-        Thread.sleep(1200);
+        Thread.sleep(Math.round(wait));
       }
       catch (Exception exc) {}
       stop();
@@ -176,9 +180,14 @@
       SoftPwm.softPwmWrite(MOTOR_PWM_DX, 100);
 
       // calcolo il tempo che ci vuole a ruotare di 'x' gradi
+      // 1200ms ~ 180 gradi --> 1200/180=6.66667
+      float fattoreConversione = 1200 / 80;
+      float wait = gradi * fattoreConversione;
+
       try {
-        Thread.sleep(1200);
+        Thread.sleep(Math.round(wait));
       }
+
       catch (Exception exc) {}
       stop();
 
@@ -186,20 +195,23 @@
 
     public void curvAdx() {
 
-
+      // la RoboTarta curva solo nel caso stia gia' andando avanti o indietro
+      SoftPwm.softPwmWrite(MOTOR_PWM_SX, 100);
+      SoftPwm.softPwmWrite(MOTOR_PWM_DX, 50);
 
     }
 
     public void curvAsx() {
 
-
+      // la RoboTarta curva solo nel caso stia gia' andando avanti o indietro
+      SoftPwm.softPwmWrite(MOTOR_PWM_SX, 50);
+      SoftPwm.softPwmWrite(MOTOR_PWM_DX, 100);
 
     }
 
 
     public void stop() {
 
-      // stop ai motori creare un metodo apposta
       SoftPwm.softPwmWrite(MOTOR_PWM_SX, 0);
       SoftPwm.softPwmWrite(MOTOR_PWM_DX, 0);
 
