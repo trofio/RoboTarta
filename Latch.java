@@ -34,20 +34,21 @@ import com.pi4j.wiringpi.SoftPwm;
 
 public class Latch {
 
-public void Latch() {
-
-  }
-
-// accetta il numero del pin da mandare alto sullo shift register
-public void seleziona(int up1, int up2) {
-
-  System.out.println("Seleziona!");
   // definisco le correlazioni tra i PIN del GPIO e il
   // significato logico per lo shift register
   private final int MOTORLATCH = 0;
   private final int MOTORCLK = 1;
   private final int MOTORENABLE = 2;
   private final int MOTORDATA =  3;
+
+public void Latch() {
+
+  }
+
+// accetta il numero del-dei pin da mandare alto sullo shift register
+public void seleziona(int up1, int up2) {
+
+  System.out.println("Seleziona!");
 
   Gpio.digitalWrite(MOTORLATCH, 0);
   Gpio.digitalWrite(MOTORDATA, 0);

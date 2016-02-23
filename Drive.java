@@ -150,7 +150,7 @@
 
     public void ruotAdx (int gradi) {
 
-      vai.seleziona(4, 5); // imposto il motore sx in senso orario e
+      vai.seleziona(5, 6); // imposto il motore sx in senso orario e
                           // quello dx in senso antiorario
 
       // e poi li aziono a vel max
@@ -172,7 +172,7 @@
 
     public void ruotAsx (int gradi) {
 
-      vai.seleziona(3, 6); // imposto il motore sx in senso antiorario e
+      vai.seleziona(3, 4); // imposto il motore sx in senso antiorario e
                           // quello dx in senso orario
 
       // e poi li aziono a vel max
