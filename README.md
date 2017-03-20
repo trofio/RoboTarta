@@ -10,9 +10,10 @@ So I decided to rewrite them in Java to use in my project.
 
 # Tools
 Over the web, there's plenty of project and tutorial written in Python or C, based on their respective libraries RPi.GPIO and WiringPi. Java is less used but there are libraries to use the Gpio of Raspberry, thanks to [pi4j project].
-The Adafruit Motor Shield use two Texas Instruments L293D to drive motors and a SN74HC595 shift register for driving the two L293D. Here the scheme: ![Schema] (img/schema%20motorshield.png)
+The Adafruit Motor Shield use two Texas Instruments L293D to drive motors and a SN74HC595 shift register for driving the two L293D. Here the scheme: [Schema]
 
 
+[Schema]: https://github.com/trofio/RoboTarta/blob/master/img/schema%20motorshield.png
 [Adafruit Motor Shield]: <https://www.adafruit.com/products/81>
 [DAGU 4WD]: http://www.dagurobot.com/goods.php?id=55
 [pi4j project]: http://pi4j.com/index.html
